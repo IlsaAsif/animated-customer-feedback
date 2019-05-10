@@ -1,0 +1,40 @@
+*{
+box-sizing: border-box;
+}
+.column{
+float: right;
+width:33.33%;
+padding:5px;
+
+}
+.right{
+float: leftt;
+width:33.33%;
+padding:5px;}
+.row: {
+content:"";
+clear:both;
+display:table;
+}
+h1{
+font-family:Goudy Stout;
+font-size: 40px;
+text-align:center;}
+.button{ 
+ background-color: DodgerBlue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 5px solid DodgerBlue;
+  border-radius: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.6s;}
+
+body{
+background-color:#E50914;}

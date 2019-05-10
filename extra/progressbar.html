@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Progress Bar </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<style type="text/css">    
+
+
+body {
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+box-sizing: 10px;
+  box-shadow: 5px 0px 20px rgba(0,0,0, .2);
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #E51905;
+  color: white;
+ width:  200px;
+ height: 50px;
+}
+
+.topnav .search-container {
+  float: right;
+
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+    margin-left: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-width: : 100px;
+   
+}
+.button{ background-color: DodgerBlue; /* Green */
+  border: none;
+  color: white;
+  padding: 40px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 5px solid ;
+  border-radius: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.6s;}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+#content{
+ margin: 40px 70px 40px 60px;
+}
+
+fieldset{
+border-color: grey;
+border-width: 2px;
+
+}
+
+.glyphicon{
+  float = right;
+}
+#sub-content{
+margin-left: 40px;
+
+}
+
+#monthly{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#yearly{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#anim-b1{
+  animation-delay: 1s ;
+  animation-duration: 2s ;
+  animation-iteration-count: 2;
+}
+#anim-b2{
+    animation-delay: 3s ;
+  animation-duration: 2s;
+  animation-iteration-count:2 ;
+}
+#anim-b3{  animation-delay: 6s;
+  animation-duration: 2s;
+  animation-iteration-count:2 ;}
+
+
+
+    </style>
+</head>
+ <body>
+   
+<div class="topnav">
+  <a class="active fa fa-home" href="/Users/N's%20Smart/Desktop/Dashboard.html"> Home </a>
+  <center>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"> <i class="fa fa-search"></i></button>
+
+    </form>
+  </div> </center>
+</div>
+
+
+<div class="container">
+  <fieldset><legend>
+  <h2> <b>View Progress Bars : </b></h2></legend>
+   
+   <div id = "btn">
+   <button id = "anim-b1" class = "button animated swing" onclick = "Weekly()"> Weekly</button>&nbsp;
+      <button id = "anim-b2" class = "button animated swing" onclick = "Monthly()" > Monthly</button>&nbsp;
+         <button id = "anim-b3" class = "button animated swing"  onclick = "Yearly()"> Yearly</button><br><br>
+       </div>
+
+  <div id = "weekly" class="progress" style="height: 30px">
+
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%">
+      Highly Satisfied
+    </div>
+    <div class="progress-bar progress-bar-info" role="progressbar" style="width:10%">
+      Satisfied
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+      Dissatisfied
+    </div>
+  </div>
+<br>
+</div>
+
+<div id = "monthly" class="progress" style="height: 30px">
+
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:60%">
+    Highly Satisfied
+    </div>
+    <div class="progress-bar progress-bar-info" role="progressbar" style="width:10%">
+       Satisfied
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:10%">
+   Dissatisfied
+    </div>
+  </div>
+<br>
+</div><br>
+
+<div id = "yearly" class="progress" style="height: 30px">
+
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%">
+     Highly Satisfied
+    </div>
+    <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%">
+       Satisfied
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+    Dissatisfied
+    </div>
+  </div>
+<br>
+</div><br><br>
+</fieldset>
+
+<script>
+function Weekly() {
+  var elem = document.getElementById("weekly");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  if (elem.style.display === "block") {
+    elem.style.display = "none";
+    
+  } else {
+    elem.style.display = "block";
+    frame();
+  }
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }}
+
+
+function Monthly() {
+  var elem = document.getElementById("monthly");   
+   var width = 1;
+  var id = setInterval(frame, 10);
+  if (elem.style.display === "block") {
+    elem.style.display = "none";
+    
+  } else {
+    elem.style.display = "block";
+    frame();
+  }
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }}
+
+function Yearly() {
+  var elem2 = document.getElementById("yearly");   
+   var width = 1;
+  var id = setInterval(frame, 10);
+  if (elem2.style.display === "block") {
+    elem2.style.display = "none";
+    
+  } else {
+    elem2.style.display = "block";
+    frame();
+  }
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem2.style.width = width + '%'; 
+    }
+  }}
+</script>
+
+</body>
+</html>
